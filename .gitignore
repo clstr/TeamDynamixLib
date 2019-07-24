@@ -261,5 +261,5 @@ __pycache__/
 *.pyc
 
 # TeamDynamix's API Library
-./TeamDynamixLib/TeamDynamix.Api.dll
-./TeamDynamixLib/TeamDynamix.Api
+/TeamDynamixLib/TeamDynamix.Api.dll
+/TeamDynamixLib/TeamDynamix.Api.xml
