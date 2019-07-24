@@ -10,7 +10,7 @@ using RestSharp;
 
 using TeamDynamix.Api.Auth;
 
-namespace TeamDynamixLib.AuthenticationLib {
+namespace TeamDynamixLib {
     public class AuthenticationLib {
         public async Task<string> GetAuthHeaderAsync( AdminTokenParameters adminTokenParameters, TDXEnvironment tDXEnvironment ) {
             JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings {

@@ -7,7 +7,7 @@ using RestSharp;
 
 using TeamDynamix.Api.Tickets;
 
-namespace TeamDynamixLib.TicketLib {
+namespace TeamDynamixLib {
     public class TicketLib {
         public async Task<Ticket> GetTicketAsync( int ticketID, int appID, string authHeader, TDXEnvironment tDXEnvironment ) {
             JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings {

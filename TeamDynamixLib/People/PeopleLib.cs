@@ -8,7 +8,7 @@ using RestSharp;
 
 using TeamDynamix.Api.Users;
 
-namespace TeamDynamixLib.PeopleLib {
+namespace TeamDynamixLib {
     public class PeopleLib {
         public async Task<User> GetPersonByUIDAsync( Guid? uid, string authHeader, TDXEnvironment tDXEnvironment ) {
             JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings {
