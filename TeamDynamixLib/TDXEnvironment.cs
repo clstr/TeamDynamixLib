@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TeamDynamixLib {
+﻿namespace TeamDynamixLib {
     public class TDXEnvironment {
         public string ClientUrl {
             get; set;
