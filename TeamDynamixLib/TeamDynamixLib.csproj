@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <Reference Include="TeamDynamix.Api">
-      <HintPath>TeamDynamix.Api.dll</HintPath>
+      <HintPath>..\TeamDynamix.Api.dll</HintPath>
     </Reference>
   </ItemGroup>
 

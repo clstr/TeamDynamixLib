@@ -13,7 +13,7 @@ namespace TeamDynamixLib {
         public string ProxyURL {
             get; set;
         }
-        public int ProxPort {
+        public int ProxyPort {
             get; set;
         }
     }

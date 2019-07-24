@@ -263,3 +263,5 @@ __pycache__/
 # TeamDynamix's API Library
 /TeamDynamixLib/TeamDynamix.Api.dll
 /TeamDynamixLib/TeamDynamix.Api.xml
+/TeamDynamix.Api.dll
+/TeamDynamix.Api.xml
