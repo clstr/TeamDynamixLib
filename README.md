@@ -14,6 +14,13 @@ I will continue to update this project as time permits.
 
 You can always add the project sln to your existing solution too.
 
+#### To install as a nuget package
+Set the project to Release and publish. After it is published (Framework Dep, Portable) you will get a nupkg in your bin\Release\netcoreapp2.1\publish\ folder. Copy the .nupkg file and import it to your project.
+
+https://stackoverflow.com/questions/10240029/how-do-i-install-a-nuget-package-nupkg-file-locally
+
+After it installs you can verify by looking at your projects Dependencies in the solution explorer under Nuget.
+
 #### Example Usage
 ```csharp
 public static async Task Main(string[] args) {
