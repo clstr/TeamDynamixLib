@@ -14,7 +14,7 @@ I will continue to update this project as time permits.
 
 You can always add the project sln to your existing solution too.
 
-#### To install as a nuget package
+#### To install as a Nuget package
 Set the project to Release and publish. After it is published (Framework Dep, Portable) you will get a nupkg in your bin\Release\netcoreapp2.1\publish\ folder. Copy the .nupkg file and import it to your project.
 
 https://stackoverflow.com/questions/10240029/how-do-i-install-a-nuget-package-nupkg-file-locally
@@ -42,6 +42,9 @@ public static async Task Main(string[] args) {
     TicketLib ticketLib = new TicketLib();
     var ticketDetailsExample1 = await ticketLib.GetTicketAsync(9280401, 431, JWT, tDXEnvironment);
     var ticketDetailsExample2 = await ticketLib.GetTicketAsync(696969, 500, JWT, tDXEnvironment);
+    
+    PeopleLib peopleLib = new PeopleLib();
+    var personDetailsExample1 = await peopleLib.GetPersonByUIDAsync(Guid.Parse("00000000-0000-0000-0000-000000000000"), JWT, tDXEnvironment);
 }
 ```
 
