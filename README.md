@@ -37,3 +37,7 @@ public static async Task Main(string[] args) {
     var ticketDetailsExample2 = await ticketLib.GetTicketAsync(696969, 500, JWT, tDXEnvironment);
 }
 ```
+
+You only need to call GetAuthHeaderAsync() once to get the Json Web Token (JWT), which can be used until it expires. This means you can use the same JWT for all other TDX requests using the same token.
+
+https://jwt.io/
