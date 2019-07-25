@@ -16,22 +16,24 @@ You can always add the project sln to your existing solution too.
 
 #### Example Usage
 ```csharp
-public async Task<Ticket> GetTicket() {
-            TeamDynamixLib.TeamDynamixLib teamDynamixLib = new TeamDynamixLib.TeamDynamixLib();
-            TeamDynamixLib.TDXEnvironment tDXEnvironment = new TeamDynamixLib.TDXEnvironment();
+public static async Task<Ticket> GetTicket() {
 
-            AdminTokenParameters adminTokenParameters = new AdminTokenParameters {
-                BEID = Guid.Parse("00000000-0000-0000-0000-000000000000"),
-                WebServicesKey = Guid.Parse("00000000-0000-0000-0000-000000000000")
-            };
+    TDXEnvironment tDXEnvironment = new TDXEnvironment {
+        ClientUrl = "https://yourSchool.teamDynamix.com/",
+        IsSandboxEnvironment = false
+    };
 
-            tDXEnvironment.ClientUrl = "https://yourSchool.teamDynamix.com/";
-            tDXEnvironment.IsSandboxEnvironment = false;
+    AdminTokenParameters adminTokenParameters = new AdminTokenParameters {
+        BEID = Guid.Parse("00000000-0000-0000-0000-000000000000"),
+        WebServicesKey = Guid.Parse("00000000-0000-0000-0000-000000000000")
+    };
 
-            var JWT = await teamDynamixLib.GetAuthHeaderAsync(adminTokenParameters.BEID, adminTokenParameters.WebServicesKey, tDXEnvironment);
+    AuthenticationLib authenticationLib = new AuthenticationLib();
+    var JWT = await authenticationLib.GetAuthHeaderAsync(adminTokenParameters, tDXEnvironment);
 
-            var ticket = await teamDynamixLib.GetTicketAsync(892372, 233, JWT, tDXEnvironment);
+    TicketLib ticketLib = new TicketLib();
+    var ticket = await ticketLib.GetTicketAsync(696969, 420, JWT, tDXEnvironment);
 
-            return ticket;
-        }
+    return ticket;
+}
 ```
