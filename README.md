@@ -1,25 +1,26 @@
 # TeamDynamixLib
-Library of TeamDynamix function calls to make my life easier.
+Library of TeamDynamix function calls to make my life easier. I will continue to update this project as time permits.
 
-DotNet Core 2.1
-RestSharp
-Newtonsoft Json.NET
+#### Dependencies
+- DotNet Core 2.1
+- RestSharp
+- Newtonsoft Json.NET
+- TeamDynamix.API
 
-You will need the **TeamDynamix API** Library for these functions to work. You can obtain these in TDNext > Downloads > TeamDynamix API .DLL (.NET 4.5.2) 
+This project does not come with the TeamDynamix API DLL, you will need the **TeamDynamix API** Library for these functions to work. You can obtain these in TDNext > Downloads > TeamDynamix API .DLL (.NET 4.5.2) .
 
-I will continue to update this project as time permits.
 
 #### To build the project
 > dotnet build
 
-You can always add the project sln to your existing solution too.
+You can always add the project sln to your existing solution too or as a nuget package.
 
 #### To install as a Nuget package
-Set the project to Release and publish. After it is published (Framework Dep, Portable) you will get a nupkg in your bin\Release\netcoreapp2.1\publish\ folder. Copy the .nupkg file and import it to your project.
+Set the project to Release and publish it. After it's published (Framework Dep, Portable) you will get a nupkg in your bin\Release\netcoreapp2.x\publish\ folder. Install the  nupkg file to your project.
 
 https://stackoverflow.com/questions/10240029/how-do-i-install-a-nuget-package-nupkg-file-locally
 
-After it installs you can verify by looking at your projects Dependencies in the solution explorer under Nuget.
+After it installs you can verify by looking at your project's dependencies in the solution explorer.
 
 #### Example Usage
 ```csharp
@@ -47,6 +48,8 @@ public static async Task Main(string[] args) {
     var personDetailsExample1 = await peopleLib.GetPersonByUIDAsync(Guid.Parse("00000000-0000-0000-0000-000000000000"), JWT, tDXEnvironment);
 }
 ```
+Note: To run the example above you will need to set your project to use C# version 7.1+.
+http://techxposer.com/2017/11/18/enable-c-7-1-projects/
 
 You only need to call GetAuthHeaderAsync() once to get the Json Web Token (JWT), which can be used until it expires. This means you can use the same JWT for all other TDX requests using the same token.
 
