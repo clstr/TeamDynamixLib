@@ -16,11 +16,12 @@ You can always add the project sln to your existing solution too.
 
 #### Example Usage
 ```csharp
-public static async Task<Ticket> GetTicket() {
+public static async Task Main(string[] args) {
+    Console.WriteLine("Hello World!");
 
     TDXEnvironment tDXEnvironment = new TDXEnvironment {
         ClientUrl = "https://yourSchool.teamDynamix.com/",
-        IsSandboxEnvironment = false
+        IsSandboxEnvironment = true
     };
 
     AdminTokenParameters adminTokenParameters = new AdminTokenParameters {
@@ -32,8 +33,7 @@ public static async Task<Ticket> GetTicket() {
     var JWT = await authenticationLib.GetAuthHeaderAsync(adminTokenParameters, tDXEnvironment);
 
     TicketLib ticketLib = new TicketLib();
-    var ticket = await ticketLib.GetTicketAsync(696969, 420, JWT, tDXEnvironment);
-
-    return ticket;
+    var ticketDetailsExample1 = await ticketLib.GetTicketAsync(9280401, 431, JWT, tDXEnvironment);
+    var ticketDetailsExample2 = await ticketLib.GetTicketAsync(696969, 500, JWT, tDXEnvironment);
 }
 ```
