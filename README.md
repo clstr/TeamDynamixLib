@@ -46,6 +46,24 @@ public static async Task Main(string[] args) {
     
     PeopleLib peopleLib = new PeopleLib();
     var personDetailsExample1 = await peopleLib.GetPersonByUIDAsync(Guid.Parse("00000000-0000-0000-0000-000000000000"), JWT, tDXEnvironment);
+    
+    Ticket ticket = new Ticket() {
+        TypeID = 20999,
+        Title = "(TEST API IGNORE) Install IIS Latest Version",
+        AccountID = 48319,
+        StatusID = 17950,
+        PriorityID = 3371,
+        RequestorUid = Guid.Parse("00000000-0000-0000-0000-000000000000")
+    };
+
+    TicketCreateOptions ticketCreateOptions = new TicketCreateOptions() {
+        EnableNotifyReviewer = false,
+        NotifyRequestor = false,
+        NotifyResponsible = false,
+        AllowRequestorCreation = false
+    };
+
+    var myTicket = await ticketLib.CreateTicketAsync(ticket, 431, ticketCreateOptions, JWT, tDXEnvironment);
 }
 ```
 Note: To run the example above you will need to set your project to use C# version 7.1+ since I am using async in the main function.
