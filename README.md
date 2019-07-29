@@ -67,11 +67,8 @@ public static async Task Main(string[] args) {
     };
 
     var myTicket = await ticketLib.CreateTicketAsync(
-        ticket, 
-        431, 
-        ticketCreateOptions, 
-        JWT, 
-        tDXEnvironment
+        ticket, 431, ticketCreateOptions,
+        JWT, tDXEnvironment
     );
 }
 ```
