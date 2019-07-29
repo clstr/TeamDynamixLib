@@ -16,7 +16,9 @@ This project does not come with the TeamDynamix API DLL, you will need the **Tea
 You can always add the project sln to your existing solution too or as a nuget package.
 
 #### To install as a Nuget package
-Set the project to Release and publish it. After it's published (Framework Dep, Portable) you will get a nupkg in your bin\Release\netcoreapp2.x\publish\ folder. Install the  nupkg file to your project.
+Install from nuget.org https://www.nuget.org/packages/TeamDynamixLib/
+
+Create the package yourself: Set the project to Release and publish it. After it's published (Framework Dep, Portable) you will get a nupkg in your bin\Release\netcoreapp2.x\publish\ folder. Install the  nupkg file to your project.
 
 https://stackoverflow.com/questions/10240029/how-do-i-install-a-nuget-package-nupkg-file-locally
 
