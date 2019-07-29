@@ -45,7 +45,10 @@ public static async Task Main(string[] args) {
     var ticketDetailsExample2 = await ticketLib.GetTicketAsync(696969, 500, JWT, tDXEnvironment);
     
     PeopleLib peopleLib = new PeopleLib();
-    var personDetailsExample1 = await peopleLib.GetPersonByUIDAsync(Guid.Parse("00000000-0000-0000-0000-000000000000"), JWT, tDXEnvironment);
+    var personDetailsExample1 = await peopleLib.GetPersonByUIDAsync(
+        Guid.Parse("00000000-0000-0000-0000-000000000000"), 
+        JWT, tDXEnvironment
+    );
     
     Ticket ticket = new Ticket() {
         TypeID = 20999,
