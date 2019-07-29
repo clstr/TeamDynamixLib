@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <PackageId>TeamDynamixLib</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Sergio Palomino</Authors>
+    <Company>Palm Beach State College</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
