@@ -48,7 +48,7 @@ public static async Task Main(string[] args) {
     var personDetailsExample1 = await peopleLib.GetPersonByUIDAsync(Guid.Parse("00000000-0000-0000-0000-000000000000"), JWT, tDXEnvironment);
 }
 ```
-Note: To run the example above you will need to set your project to use C# version 7.1+.
+Note: To run the example above you will need to set your project to use C# version 7.1+ since I am using async in the main function.
 http://techxposer.com/2017/11/18/enable-c-7-1-projects/
 
 You only need to call GetAuthHeaderAsync() once to get the Json Web Token (JWT), which can be used until it expires. This means you can use the same JWT for all other TDX requests using the same token.
