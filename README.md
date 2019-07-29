@@ -66,7 +66,13 @@ public static async Task Main(string[] args) {
         AllowRequestorCreation = false
     };
 
-    var myTicket = await ticketLib.CreateTicketAsync(ticket, 431, ticketCreateOptions, JWT, tDXEnvironment);
+    var myTicket = await ticketLib.CreateTicketAsync(
+        ticket, 
+        431, 
+        ticketCreateOptions, 
+        JWT, 
+        tDXEnvironment
+    );
 }
 ```
 Note: To run the example above you will need to set your project to use C# version 7.1+ since I am using async in the main function.
