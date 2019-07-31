@@ -11,7 +11,7 @@ using TeamDynamix.Api.Users;
 namespace TeamDynamixLib {
     public class PeopleLib {
 
-        // POST https://yourSchool.Teamdynamix.com/TDWebApi/api/people/{uid}
+        // GET https://yourSchool.Teamdynamix.com/TDWebApi/api/people/{uid}
         // Description: Gets a person from the system. 
         // Invocations of this method are rate-limited, with a restriction of 60 calls per IP address every 60 seconds. 
         public async Task<User> GetPersonByUIDAsync( Guid uid, string authHeader, TDXEnvironment tDXEnvironment ) {
@@ -123,7 +123,7 @@ namespace TeamDynamixLib {
             return JsonConvert.DeserializeObject<User>(response.Content);
         }
         
-        // POST https://yourSchool.Teamdynamix.com/TDWebApi/api/people/{uid}/functionalroles
+        // GET https://yourSchool.Teamdynamix.com/TDWebApi/api/people/{uid}/functionalroles
         // Description: Gets all functional roles for a particular user.
         // Invocations of this method are rate-limited, with a restriction of 180 calls per IP address every 60 seconds.
         public async Task<User> GetPersonFunctionalRolesAsync( Guid? uid, string authHeader, TDXEnvironment tDXEnvironment ) {

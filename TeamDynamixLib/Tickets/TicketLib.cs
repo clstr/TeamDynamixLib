@@ -9,6 +9,10 @@ using TeamDynamix.Api.Tickets;
 
 namespace TeamDynamixLib {
     public class TicketLib {
+
+        // GET https://yourSchool.Teamdynamix.com/TDWebApi/api/{appId}/tickets/{id} 
+        // Description: Gets a ticket.
+        // Invocations of this method are rate-limited, with a restriction of 60 calls per IP address every 60 seconds.
         public async Task<Ticket> GetTicketAsync( int ticketID, int appID, string authHeader, TDXEnvironment tDXEnvironment ) {
             JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings {
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
@@ -42,7 +46,7 @@ namespace TeamDynamixLib {
             return JsonConvert.DeserializeObject<Ticket>(response.Content);
         }
 
-        // POST https://yourSchool.School.edu/TDWebApi/api/{appId}/tickets?EnableNotifyReviewer={EnableNotifyReviewer}&NotifyRequestor={NotifyRequestor}&NotifyResponsible={NotifyResponsible}&AllowRequestorCreation={AllowRequestorCreation}
+        // POST https://yourSchool.Teamdynamix.com/TDWebApi/api/{appId}/tickets?EnableNotifyReviewer={EnableNotifyReviewer}&NotifyRequestor={NotifyRequestor}&NotifyResponsible={NotifyResponsible}&AllowRequestorCreation={AllowRequestorCreation}
         // Description: Creates a ticket.
         // Invocations of this method are rate-limited, with a restriction of 120 calls per IP address every 60 seconds.
         public async Task<Ticket> CreateTicketAsync( Ticket ticket, int appID, TicketCreateOptions ticketCreateOptions, string authHeader, TDXEnvironment tDXEnvironment ) {
