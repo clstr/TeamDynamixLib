@@ -1,5 +1,6 @@
 # TeamDynamixLib
 Library of TeamDynamix function calls to make my life easier. I will continue to update this project as time permits.
+https://github.com/clstr/TeamDynamixLib
 
 #### Dependencies
 - DotNet Core 2.1
