@@ -57,8 +57,12 @@ namespace TeamDynamixLib {
             var bearer = $"Bearer {authHeader}";
 
             RestClient restClient = new RestClient(tDXEnvironment.ClientUrl + (tDXEnvironment.IsSandboxEnvironment ? "SBTDWebApi" : "TDWebApi"));
-            RestRequest restRequest = new RestRequest($"api/{appID}/tickets?EnableNotifyReviewer={ticketCreateOptions.EnableNotifyReviewer}&NotifyRequestor={ticketCreateOptions.NotifyRequestor}&NotifyResponsible={ticketCreateOptions.NotifyResponsible}&AllowRequestorCreation={ticketCreateOptions.AllowRequestorCreation}", 
-                Method.POST);
+            RestRequest restRequest = new RestRequest($"api/{appID}/tickets", Method.POST);
+
+            restRequest.AddParameter("EnableNotifyReviewer", ticketCreateOptions.EnableNotifyReviewer);
+            restRequest.AddParameter("NotifyRequestor", ticketCreateOptions.NotifyRequestor);
+            restRequest.AddParameter("NotifyResponsible", ticketCreateOptions.NotifyResponsible);
+            restRequest.AddParameter("AllowRequestorCreation", ticketCreateOptions.AllowRequestorCreation);
 
             restRequest.AddHeader("accept", "application/json");
             restRequest.AddHeader("Authorization", bearer);
