@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -191,7 +192,7 @@ namespace TeamDynamixLib {
         /// <param name="tDXEnvironment"></param>
         /// <param name="maxResults"></param>
         /// <returns></returns>
-        public async Task<User> GetPersonLookupAsync(string searchText, string authHeader, TDXEnvironment tDXEnvironment, int maxResults = 50) {
+        public async Task<List<User>> GetPersonLookupAsync(string searchText, string authHeader, TDXEnvironment tDXEnvironment, int maxResults = 50) {
             var bearer = $"Bearer {authHeader}";
 
             RestClient restClient = new RestClient(tDXEnvironment.ClientUrl + (tDXEnvironment.IsSandboxEnvironment ? "SBTDWebApi" : "TDWebApi"));
@@ -219,7 +220,7 @@ namespace TeamDynamixLib {
                 return null;
             }
 
-            return JsonConvert.DeserializeObject<User>(response.Content);
+            return JsonConvert.DeserializeObject<List<User>>(response.Content);
         }
     }
 }
