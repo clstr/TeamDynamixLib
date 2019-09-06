@@ -89,7 +89,8 @@ https://solutions.teamdynamix.com/TDWebApi/
 
 #### Auth
 - POST https://solutions.teamdynamix.com/TDWebApi/api/auth/loginadmin
- 
+	- Logs in the current session using a special key-based administrative account.
+
 #### People
 - GET https://solutions.teamdynamix.com/TDWebApi/api/people/{uid}
 	- Gets a person from the system.
