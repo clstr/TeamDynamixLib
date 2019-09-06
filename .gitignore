@@ -266,3 +266,4 @@ __pycache__/
 /TeamDynamix.Api.dll
 /TeamDynamix.Api.xml
 TeamDynamixLib/Properties/PublishProfiles/FolderProfile.pubxml
+/TeamDynamixLibTests/appsettings.Development.json
