@@ -10,20 +10,13 @@ https://github.com/clstr/TeamDynamixLib
 
 This project does not come with the TeamDynamix API DLL, you will need the **TeamDynamix API** Library for these functions to work. You can obtain these in TDNext > Downloads > TeamDynamix API .DLL (.NET 4.5.2) .
 
-
 ### To build the project
 > dotnet build
 
-You can always add the project sln to your existing solution too or as a nuget package.
+You can always add the project sln to your existing solution
 
 ### To install as a Nuget package
 Install from nuget.org https://www.nuget.org/packages/TeamDynamixLib/
-
-Create the package yourself: Set the project to Release and publish it. After it's published (Framework Dep, Portable) you will get a nupkg in your bin\Release\netcoreapp2.x\publish\ folder. Install the  nupkg file to your project.
-
-https://stackoverflow.com/questions/10240029/how-do-i-install-a-nuget-package-nupkg-file-locally
-
-After it installs you can verify by looking at your project's dependencies in the solution explorer.
 
 ### Example Usage
 ```csharp
@@ -75,12 +68,9 @@ public static async Task Main(string[] args) {
     );
 }
 ```
-Note: To run the example above you will need to set your project to use C# version 7.1+ since I am using async in the main function.
-http://techxposer.com/2017/11/18/enable-c-7-1-projects/
+Note: To run the example above you will need to set your project to use C# version 7.1+ since I am using async in the main function. http://techxposer.com/2017/11/18/enable-c-7-1-projects/
 
-You only need to call GetAuthHeaderAsync() once to get the Json Web Token (JWT), which can be used until it expires. This means you can use the same JWT for all other TDX requests using the same token.
-
-https://jwt.io/
+You only need to call GetAuthHeaderAsync() once to get the Json Web Token (JWT), which can be used until it expires. This means you can use the same JWT for all other TDX requests using the same token. https://jwt.io/
 
 ### What is implemented?
 
