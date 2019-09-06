@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using System.ComponentModel;
 
 using TeamDynamixLib;
 using TeamDynamix.Api.Auth;
+using TeamDynamix.Api.Tickets;
+using TeamDynamix.Api.PriorityFactors;
+
+
 
 namespace TeamDynamixLibTests {
 
@@ -39,23 +44,41 @@ namespace TeamDynamixLibTests {
             AuthenticationLib authenticationLib = new AuthenticationLib();
             var JWT = await authenticationLib.GetAuthHeaderAsync(adminTokenParameters, tDXEnvironment);
 
-            TicketLib ticketLib = new TicketLib();
-            
+            ImpactsLib impactsLib = new ImpactsLib();
+            PrioritiesLib prioritiesLib = new PrioritiesLib();
+            SourcesLib sourcesLib = new SourcesLib();
 
+            var impacts = await impactsLib.GetTicketImpactsAsync(431, JWT, tDXEnvironment);
+            var priorities = await prioritiesLib.GetTicketPrioritiesAsync(431, JWT, tDXEnvironment);
+            var sources = await sourcesLib.GetTicketSourcesAsync(431, JWT, tDXEnvironment);
 
+            //PeopleLib peopleLib = new PeopleLib();
+            //var serg = await peopleLib.GetPersonLookupAsync("palomins@palmbeachstate.edu", JWT, tDXEnvironment);
 
-            var result1 = Task.WhenAll(
-                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment),
-                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment),
-                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment),
-                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment),
-                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment),
-                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment)
-            );
-            
+            //TicketLib ticketLib = new TicketLib();
+            //Ticket ticket = new Ticket() {
+            //    TypeID = 20999,
+            //    Title = "TEST API IGNORE",
+            //    AccountID = 48319,
+            //    StatusID = 17950,
+            //    PriorityID = 3371,
+            //    RequestorUid = serg[0].UID
+            //};
 
+            //TicketCreateOptions ticketCreateOptions = new TicketCreateOptions() {
+            //    AllowRequestorCreation = false,
+            //    EnableNotifyReviewer = false,
+            //    NotifyRequestor = false,
+            //    NotifyResponsible = false
+            //};
 
+            //var myTestTicket = await ticketLib.CreateTicketAsync(ticket, 431, ticketCreateOptions, JWT, tDXEnvironment);
 
+            //foreach(PropertyDescriptor descriptor in TypeDescriptor.GetProperties(myTestTicket)) {
+            //    string name = descriptor.Name;
+            //    object value = descriptor.GetValue(myTestTicket);
+            //    Console.WriteLine("{0} = {1}", name, value);
+            //}
 
             Console.ReadLine();
         }
