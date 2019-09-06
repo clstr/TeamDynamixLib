@@ -13,6 +13,7 @@ namespace TeamDynamixLibTests {
             Console.WriteLine("Hello World!");
             Console.WriteLine(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"));
 
+            #region AppSettings
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true)
                 .AddJsonFile("appsettings.Development.json", true, true)
@@ -23,6 +24,7 @@ namespace TeamDynamixLibTests {
 
             var proxyConfig = new ProxySettings();
             config.GetSection("ProxySettings").Bind(proxyConfig);
+            #endregion 
 
             TDXEnvironment tDXEnvironment = new TDXEnvironment {
                 ClientUrl = tdxConfig.ClientURL,
@@ -38,13 +40,22 @@ namespace TeamDynamixLibTests {
             var JWT = await authenticationLib.GetAuthHeaderAsync(adminTokenParameters, tDXEnvironment);
 
             TicketLib ticketLib = new TicketLib();
-            var ticketDetailsExample = await ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment);
+            
 
-            Console.WriteLine(ticketDetailsExample.Title);
-            Console.WriteLine(ticketDetailsExample.Description);
-            Console.WriteLine(ticketDetailsExample.RequestorName);
-            Console.WriteLine(ticketDetailsExample.StatusID);
-            Console.WriteLine(ticketDetailsExample.ResponsibleFullName);
+
+
+            var result1 = Task.WhenAll(
+                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment),
+                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment),
+                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment),
+                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment),
+                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment),
+                ticketLib.GetTicketAsync(9757500, 431, JWT, tDXEnvironment)
+            );
+            
+
+
+
 
             Console.ReadLine();
         }
