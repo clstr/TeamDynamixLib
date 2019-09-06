@@ -87,9 +87,10 @@ https://jwt.io/
 So far i have the following tdx endpoints implemented according to the API Documentation
 https://solutions.teamdynamix.com/TDWebApi/
 
-- Auth
+##### Auth
  -  POST https://solutions.teamdynamix.com/TDWebApi/api/auth/loginadmin
-- People
+ 
+##### People
  - GET https://solutions.teamdynamix.com/TDWebApi/api/people/{uid}
    - Gets a person from the system.
  - POST https://solutions.teamdynamix.com/TDWebApi/api/people
@@ -100,7 +101,8 @@ https://solutions.teamdynamix.com/TDWebApi/
    - Gets all functional roles for a particular user.
  - GET https://solutions.teamdynamix.com/TDWebApi/api/people/lookup?searchText={searchText}&maxResults={maxResults}
    - Performs a restricted lookup of TeamDynamix people. Will not return full user information for each matching user.
-- Tickets
+
+##### Tickets
  - GET https://solutions.teamdynamix.com/TDWebApi/api/{appId}/tickets/impacts
    - Gets all active ticket impacts.
  - GET https://solutions.teamdynamix.com/TDWebApi/api/{appId}/tickets/priorities
