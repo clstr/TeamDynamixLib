@@ -81,3 +81,33 @@ http://techxposer.com/2017/11/18/enable-c-7-1-projects/
 You only need to call GetAuthHeaderAsync() once to get the Json Web Token (JWT), which can be used until it expires. This means you can use the same JWT for all other TDX requests using the same token.
 
 https://jwt.io/
+
+### What is implemented?
+
+So far i have the following tdx endpoints implemented according to the API Documentation
+https://solutions.teamdynamix.com/TDWebApi/
+
+- Auth
+ -  POST https://solutions.teamdynamix.com/TDWebApi/api/auth/loginadmin
+- People
+ - GET https://solutions.teamdynamix.com/TDWebApi/api/people/{uid}
+   - Gets a person from the system.
+ - POST https://solutions.teamdynamix.com/TDWebApi/api/people
+   - Creates a user in the system and returns an object representing that person. 
+ - POST https://solutions.teamdynamix.com/TDWebApi/api/people/{uid}
+   - Updates a person entry for the user with the specified identifier with a set of new values.
+ - GET https://solutions.teamdynamix.com/TDWebApi/api/people/{uid}/functionalroles
+   - Gets all functional roles for a particular user.
+ - GET https://solutions.teamdynamix.com/TDWebApi/api/people/lookup?searchText={searchText}&maxResults={maxResults}
+   - Performs a restricted lookup of TeamDynamix people. Will not return full user information for each matching user.
+- Tickets
+ - GET https://solutions.teamdynamix.com/TDWebApi/api/{appId}/tickets/impacts
+   - Gets all active ticket impacts.
+ - GET https://solutions.teamdynamix.com/TDWebApi/api/{appId}/tickets/priorities
+   - Gets all active ticket priorities.
+ - GET https://solutions.teamdynamix.com/TDWebApi/api/{appId}/tickets/sources
+   - Gets all active ticket sources.
+ - GET https://solutions.teamdynamix.com/TDWebApi/api/{appId}/tickets/{id}
+   - Gets a ticket. 
+ - POST https://solutions.teamdynamix.com/TDWebApi/api/{appId}/tickets?EnableNotifyReviewer={EnableNotifyReviewer}&NotifyRequestor={NotifyRequestor}&NotifyResponsible={NotifyResponsible}&AllowRequestorCreation={AllowRequestorCreation}
+   - Creates a ticket.
