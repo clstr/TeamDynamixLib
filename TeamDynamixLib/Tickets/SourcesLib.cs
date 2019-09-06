@@ -9,8 +9,8 @@ using RestSharp;
 
 using TeamDynamix.Api.Tickets;
 
-namespace TeamDynamixLib.Tickets {
-    class SourcesLib {
+namespace TeamDynamixLib {
+    public class SourcesLib {
 
         /// <summary>
         /// Gets all active ticket sources.

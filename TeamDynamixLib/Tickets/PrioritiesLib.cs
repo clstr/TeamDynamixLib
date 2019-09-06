@@ -9,8 +9,8 @@ using RestSharp;
 
 using TeamDynamix.Api.PriorityFactors;
 
-namespace TeamDynamixLib.Tickets {
-    class PrioritiesLib {
+namespace TeamDynamixLib {
+    public class PrioritiesLib {
 
         /// <summary>
         /// Gets all active ticket priorities. 

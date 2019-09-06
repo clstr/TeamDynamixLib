@@ -9,8 +9,8 @@ using RestSharp;
 
 using TeamDynamix.Api.PriorityFactors;
 
-namespace TeamDynamixLib.Tickets {
-    class ImpactsLib {
+namespace TeamDynamixLib {
+    public class ImpactsLib {
 
         /// <summary>
         /// Gets all active ticket impacts.
